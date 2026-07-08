@@ -19,6 +19,10 @@ more** — from a self-hosted service. No database connection and no internet ac
 © Maathra Technology and Consultancy Pvt. Ltd. ReportFactory Lite is proprietary software; this
 repository provides the runnable distribution, documentation and samples.
 
+<img width="1470" height="886" alt="image" src="https://github.com/user-attachments/assets/93004e14-a4c8-491e-b8f2-672b0378c860" />
+<img width="1469" height="882" alt="image" src="https://github.com/user-attachments/assets/d5524746-5a0c-4347-8d11-b4af28de6bbf" />
+<img width="1470" height="883" alt="image" src="https://github.com/user-attachments/assets/2176fd3b-b6ba-4d87-85a9-a339e1d93270" />
+
 ---
 
 ## Download
