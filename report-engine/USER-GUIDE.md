@@ -394,6 +394,5 @@ confirm via `GET /status`.
 - **Sales / licensing:** sales@maathra.com
 - **General:** contact@maathra.com
 - **Product:** https://www.maathra.com/products/report-factory
-- **Docs:** https://docs.maathra.com/maathra-docs/reportfactory-lite/maathra-reportfactory-intro
 
 © Maathra Technology and Consultancy Pvt. Ltd.
