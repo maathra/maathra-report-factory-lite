@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "DEPARTMENT_NAME": "Sales",
+            "TOTAL_SALARY": 304500,
+            "TOTAL_EMPLOYEES": 34
+        },
+        {
+            "DEPARTMENT_NAME": "Shipping",
+            "TOTAL_SALARY": 156400,
+            "TOTAL_EMPLOYEES": 45
+        },
+        {
+            "DEPARTMENT_NAME": "Executive",
+            "TOTAL_SALARY": 58000,
+            "TOTAL_EMPLOYEES": 3
+        },
+        {
+            "DEPARTMENT_NAME": "Finance",
+            "TOTAL_SALARY": 51608,
+            "TOTAL_EMPLOYEES": 6
+        },
+        {
+            "DEPARTMENT_NAME": "IT",
+            "TOTAL_SALARY": 28800,
+            "TOTAL_EMPLOYEES": 5
+        },
+        {
+            "DEPARTMENT_NAME": "Purchasing",
+            "TOTAL_SALARY": 24900,
+            "TOTAL_EMPLOYEES": 6
+        },
+        {
+            "DEPARTMENT_NAME": "Accounting",
+            "TOTAL_SALARY": 20308,
+            "TOTAL_EMPLOYEES": 2
+        },
+        {
+            "DEPARTMENT_NAME": "Others",
+            "TOTAL_SALARY": 46900,
+            "TOTAL_EMPLOYEES": 5
+        }
+    ]
+}

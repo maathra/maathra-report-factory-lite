@@ -1,0 +1,165 @@
+{
+    "data": {
+        "ORDER_ID": 2354,
+        "ORDER_DATE": "18 JUL 2025",
+        "ORDER_MODE": "direct",
+        "NAME": "Harrison Sutherland",
+        "STREET_ADDRESS": "6445 Bay Harbor Ln",
+        "POSTAL_CODE": "46254",
+        "CITY": "Indianapolis",
+        "STATE_PROVINCE": "IN",
+        "COUNTRY_NAME": "United States of America",
+        "PHONE_NUMBER": "+1 317 123 4126",
+        "CUST_EMAIL": "Harrison.Sutherland@GODWIT.COM",
+        "ORDER_STATUS": "Not Fully Entered",
+        "ORDER_TOTAL": 46257,
+        "SALES_REP": "Oliver Tuvault",
+        "TAX": 0,
+        "DEFAULT_LOGO": "report-logo.png",
+        "LINE_ITEMS": [
+            {
+                "ROWNUM": 1,
+                "ORDER_ITEM_ID": 770,
+                "ORDER_ID": 2354,
+                "LINE_ITEM_ID": 2,
+                "PRODUCT_NAME": "MB - S900/650+",
+                "PRODUCT_DESCRIPTION": "PC motherboard, 900 Series; standard motherboard for all models 650 and up.",
+                "UNIT_PRICE": 96.8,
+                "QUANTITY": 43,
+                "LINE_AMOUNT": 4162.4
+            },
+            {
+                "ROWNUM": 2,
+                "ORDER_ITEM_ID": 884,
+                "ORDER_ID": 2354,
+                "LINE_ITEM_ID": 4,
+                "PRODUCT_NAME": "Sound Card STD",
+                "PRODUCT_DESCRIPTION": "Sound Card - standard version, with MIDI interface, line in/out, low impedance microphone input.",
+                "UNIT_PRICE": 41,
+                "QUANTITY": 47,
+                "LINE_AMOUNT": 1927
+            },
+            {
+                "ROWNUM": 3,
+                "ORDER_ITEM_ID": 678,
+                "ORDER_ID": 2354,
+                "LINE_ITEM_ID": 1,
+                "PRODUCT_NAME": "KB 101/EN",
+                "PRODUCT_DESCRIPTION": "Standard PC/AT Enhanced Keyboard (101/102-Key). Input locale: English (US).",
+                "UNIT_PRICE": 48,
+                "QUANTITY": 61,
+                "LINE_AMOUNT": 2928
+            },
+            {
+                "ROWNUM": 4,
+                "ORDER_ITEM_ID": 839,
+                "ORDER_ID": 2354,
+                "LINE_ITEM_ID": 3,
+                "PRODUCT_NAME": "PS 220V /D",
+                "PRODUCT_DESCRIPTION": "Standard power supply, 220V, for desktop computers.",
+                "UNIT_PRICE": 79,
+                "QUANTITY": 47,
+                "LINE_AMOUNT": 3713
+            },
+            {
+                "ROWNUM": 5,
+                "ORDER_ITEM_ID": 969,
+                "ORDER_ID": 2354,
+                "LINE_ITEM_ID": 6,
+                "PRODUCT_NAME": "Screws <B.28.S>",
+                "PRODUCT_DESCRIPTION": "Screws: Brass, size 28mm, straight. Plastic box, contents 500.",
+                "UNIT_PRICE": 16,
+                "QUANTITY": 53,
+                "LINE_AMOUNT": 848
+            },
+            {
+                "ROWNUM": 6,
+                "ORDER_ITEM_ID": 928,
+                "ORDER_ID": 2354,
+                "LINE_ITEM_ID": 5,
+                "PRODUCT_NAME": "Screws <S.16.S>",
+                "PRODUCT_DESCRIPTION": "Screws: Steel, size 16 mm, straight. Carton box, contents 750.",
+                "UNIT_PRICE": 21,
+                "QUANTITY": 48,
+                "LINE_AMOUNT": 1008
+            },
+            {
+                "ROWNUM": 7,
+                "ORDER_ITEM_ID": 1270,
+                "ORDER_ID": 2354,
+                "LINE_ITEM_ID": 13,
+                "PRODUCT_NAME": "Word Processing - SWP/V 4.5",
+                "PRODUCT_DESCRIPTION": "SmartWord Word Processor, Professional Edition Version 4.5, for Vision Release 11.x. Shrink wrap includes CD-ROM, containing advanced software, printed manual, and license registration.",
+                "UNIT_PRICE": 61,
+                "QUANTITY": 77,
+                "LINE_AMOUNT": 4697
+            },
+            {
+                "ROWNUM": 8,
+                "ORDER_ITEM_ID": 1199,
+                "ORDER_ID": 2354,
+                "LINE_ITEM_ID": 11,
+                "PRODUCT_NAME": "Smart Suite - V/SP",
+                "PRODUCT_DESCRIPTION": "Office Suite (SmartWrite, SmartArt, SmartSpread, SmartBrowse) for Vision. Spanish language software and user manuals.",
+                "UNIT_PRICE": 145.2,
+                "QUANTITY": 70,
+                "LINE_AMOUNT": 10164
+            },
+            {
+                "ROWNUM": 9,
+                "ORDER_ITEM_ID": 1232,
+                "ORDER_ID": 2354,
+                "LINE_ITEM_ID": 12,
+                "PRODUCT_NAME": "Smart Suite - V/EN",
+                "PRODUCT_DESCRIPTION": "Office Suite (SmartWrite, SmartArt, SmartSpread, SmartBrowse) for Vision. English language software and user manuals.",
+                "UNIT_PRICE": 113.3,
+                "QUANTITY": 72,
+                "LINE_AMOUNT": 8157.6
+            },
+            {
+                "ROWNUM": 10,
+                "ORDER_ITEM_ID": 1010,
+                "ORDER_ID": 2354,
+                "LINE_ITEM_ID": 7,
+                "PRODUCT_NAME": "Card Holder - 25",
+                "PRODUCT_DESCRIPTION": "Card Holder; heavy plastic business card holder with embossed corporate logo. Holds about 25 of your business cards, depending on card thickness.",
+                "UNIT_PRICE": 17,
+                "QUANTITY": 58,
+                "LINE_AMOUNT": 986
+            },
+            {
+                "ROWNUM": 11,
+                "ORDER_ITEM_ID": 1060,
+                "ORDER_ID": 2354,
+                "LINE_ITEM_ID": 8,
+                "PRODUCT_NAME": "Manual - Vision Net6.3/US",
+                "PRODUCT_DESCRIPTION": "Vision Networking V6.3 Reference Manual. US version with advanced encryption.",
+                "UNIT_PRICE": 30,
+                "QUANTITY": 61,
+                "LINE_AMOUNT": 1830
+            },
+            {
+                "ROWNUM": 12,
+                "ORDER_ITEM_ID": 1107,
+                "ORDER_ID": 2354,
+                "LINE_ITEM_ID": 9,
+                "PRODUCT_NAME": "Manual - Vision Tools2.0",
+                "PRODUCT_DESCRIPTION": "Vision Business Tools Suite V2.0 Reference Manual. Includes installation, configuration, and user guide.",
+                "UNIT_PRICE": 37,
+                "QUANTITY": 64,
+                "LINE_AMOUNT": 2368
+            },
+            {
+                "ROWNUM": 13,
+                "ORDER_ITEM_ID": 1158,
+                "ORDER_ID": 2354,
+                "LINE_ITEM_ID": 10,
+                "PRODUCT_NAME": "Manual - Vision OS/2.x",
+                "PRODUCT_DESCRIPTION": "Vision Operating System V2.0/2.1/2/3 Reference Manual. Complete installation, configuration, management, and tuning information for Vision system administration. Note that this manual replaces the individual Version 2.0 and 2.1 manuals.",
+                "UNIT_PRICE": 51,
+                "QUANTITY": 68,
+                "LINE_AMOUNT": 3468
+            }
+        ]
+    }
+}

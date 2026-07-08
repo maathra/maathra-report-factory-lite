@@ -1,0 +1,62 @@
+ReportFactory Lite - Quick Start
+================================
+
+1. Unzip this folder anywhere.  (Java 8 or newer must be installed.)
+
+2. Start it:
+     Linux / macOS :   ./run.sh
+     Windows       :   run.bat
+
+3. Open the landing page:   http://localhost:8080/
+
+4. Generate a report (example, using a bundled sample template):
+     curl -X POST http://localhost:8080/export \
+       -H "X-API-KEY: key" \
+       -H "Content-Type: application/json" \
+       -H "reportFormat: PDF" \
+       -H "reportTemplateMain: arfl-demo-invoice" \
+       --data-binary @sample-data/arfl-demo-invoice.json \
+       -o invoice.pdf
+
+
+File Console  (manage templates / assets / reports / logs / extra jars)
+-----------------------------------------------------------------------
+The console is ENABLED out of the box and reachable as soon as you deploy.
+Locally, open:
+
+     http://localhost:8080/console
+On a remote server:   http://<your-host>:8080/console
+
+Default keys (shown so you can log in immediately):
+     Access key (unlock UI) :   rfl-console-auth
+     API key    (file ops)  :   rfl-console-api
+
+>>> These default keys are publicly documented, so BEFORE real use change both
+    keys in config/application.properties, and run behind HTTPS. The api key is
+    admin-equivalent: uploaded templates and jars execute code on this server.
+    Optionally restrict which hosts can reach the console with allowed-ips
+    (empty = any IP; e.g. allowed-ips=203.0.113.5/32 to lock it to one address).
+
+
+Keys & configuration
+---------------------
+Report API key  :  maathra.rfl.api-key   (default "key" - change it)
+All settings    :  config/application.properties
+Your templates  :  templates/            Sample payloads: sample-data/
+Extra jars      :  lib/  (fonts, barcode/QR libs; loaded on restart)
+Full manual     :  USER-GUIDE.md
+Open-source attributions:  THIRD-PARTY-NOTICES.md
+
+
+Trial vs. Licensed
+------------------
+Trial mode (no licence key) allows 15 report generations per hour - a fixed
+limit. For unlimited use, open http://localhost:8080/unique-key and email the
+shown id to sales@maathra.com to receive a licence key.
+
+
+Deploy into Tomcat instead of standalone?
+------------------------------------------
+Use report-factory-lite-<version>.war (included in this bundle) - see
+USER-GUIDE.md section 2.3. Remember to set maathra.rfl.console.restart-enabled=false
+under Tomcat.

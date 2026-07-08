@@ -1,0 +1,22 @@
+{
+    "data": [
+        {
+            "ORDER_ID": 2354,
+            "ORDER_DATE": "18 JUL 2025",
+            "ORDER_MODE": "direct",
+            "NAME": "Harrison Sutherland",
+            "STREET_ADDRESS": "6445 Bay Harbor Ln",
+            "POSTAL_CODE": "46254",
+            "CITY": "Indianapolis",
+            "STATE_PROVINCE": "IN",
+            "COUNTRY_NAME": "United States of America",
+            "PHONE_NUMBER": "+1 317 123 4126",
+            "CUST_EMAIL": "Harrison.Sutherland@GODWIT.COM",
+            "ORDER_STATUS": "Not Fully Entered",
+            "ORDER_TOTAL": 46257,
+            "SALES_REP": "Oliver Tuvault",
+            "TAX": 0,
+            "QR": "Order ID: 2354\nOrder Date: 18-JUL-2025\nOrder Total:46257"
+        }
+    ]
+}
