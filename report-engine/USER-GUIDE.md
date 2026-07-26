@@ -140,6 +140,85 @@ open `http://<host>:8080/` (or your Tomcat port) to confirm it is running.
 
 ---
 
+## 2.4 Enabling HTTPS (TLS)
+
+Run the service over HTTPS whenever it is reachable beyond localhost — API keys, licence keys and
+console keys travel in request headers and must not cross the network in clear text. There are two
+approaches; pick one.
+
+### Option A — TLS in the service (standalone jar)
+
+The embedded web server terminates TLS directly. This is configuration only — no rebuild.
+
+**1. Create a keystore (PKCS12).**
+
+For a real certificate (e.g. from your CA or Let’s Encrypt — `fullchain.pem` + `privkey.pem`):
+```bash
+openssl pkcs12 -export -name rfl \
+  -in fullchain.pem -inkey privkey.pem \
+  -out config/keystore.p12 -passout pass:CHANGEIT
+```
+For a self-signed keystore (testing only):
+```bash
+keytool -genkeypair -alias rfl -keyalg RSA -keysize 2048 -validity 3650 \
+  -storetype PKCS12 -keystore config/keystore.p12 \
+  -storepass CHANGEIT -dname "CN=your-host, O=Your Org"
+```
+
+**2. Add to `config/application.properties`:**
+```properties
+server.port=8443
+server.ssl.enabled=true
+server.ssl.key-store=config/keystore.p12
+server.ssl.key-store-password=CHANGEIT
+server.ssl.key-store-type=PKCS12
+server.ssl.key-alias=rfl
+```
+`key-store` is resolved relative to the folder you start from; an absolute path also works.
+
+**3. Restart** (`./run.sh`). The service is now on **`https://<host>:8443/`**.
+
+- Ports below 1024 (e.g. 443) need root/sudo; **8443** does not.
+- Protect the keystore file (`chmod 600 config/keystore.p12`) and use a strong password — it sits
+  with your other secrets.
+- Callers switch to `https://…`. The File Console’s “non-HTTPS” warning disappears once TLS is on.
+
+### Option B — TLS at a reverse proxy (nginx / Apache / load balancer)
+
+The proxy holds the certificate and forwards plain HTTP to the service on `8080`. Common when you
+already run a proxy or want easy certificate renewal.
+
+Keep the service on plain HTTP and tell it to honour the proxy’s forwarded headers, so it knows the
+original request arrived over HTTPS:
+```properties
+server.port=8080
+server.forward-headers-strategy=native
+```
+The proxy must forward the protocol header, e.g. nginx:
+```nginx
+location / {
+    proxy_pass         http://127.0.0.1:8080;
+    proxy_set_header   Host              $host;
+    proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
+    proxy_set_header   X-Forwarded-Proto $scheme;   # required
+}
+```
+Because the **File Console** trusts `X-Forwarded-Proto` only from known proxies, also set the
+proxy’s address:
+```properties
+maathra.rfl.console.trusted-proxies=127.0.0.1/32   # your proxy IP(s), CIDR supported
+```
+With this, the service treats requests as secure and the console’s insecure-connection warning
+clears. Terminate TLS **only** at the proxy; don’t also enable `server.ssl.*`.
+
+### If you deploy the WAR to Tomcat
+
+TLS is handled by **Tomcat**, not this application — configure an SSL `<Connector>` in Tomcat’s
+`server.xml` (or put Tomcat behind a reverse proxy as in Option B). `server.ssl.*` in
+`application.properties` is ignored under Tomcat.
+
+---
+
 ## 3. Configuration
 
 All settings live in `<root>/config/application.properties`. Every product property uses the
