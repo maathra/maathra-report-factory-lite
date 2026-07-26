@@ -1,7 +1,7 @@
 # ReportFactory Lite
 
-[![Latest release](https://img.shields.io/github/v/release/maathra/maathra-report-factory-lite?label=release&color=0aa)](https://github.com/maathra/maathra-report-factory-lite/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/maathra/maathra-report-factory-lite/total?color=0aa)](https://github.com/maathra/maathra-report-factory-lite/releases)
+[![Latest release](https://img.shields.io/github/v/release/maathratnc/maathra-report-factory-lite?label=release&color=0aa)](https://github.com/maathratnc/maathra-report-factory-lite/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/maathratnc/maathra-report-factory-lite/total?color=0aa)](https://github.com/maathratnc/maathra-report-factory-lite/releases)
 ![Java 8+](https://img.shields.io/badge/Java-8%2B-orange)
 ![Formats](https://img.shields.io/badge/output-PDF%20%C2%B7%20DOCX%20%C2%B7%20XLSX%20%C2%B7%20PPTX%20%C2%B7%20HTML%20%C2%B7%20RTF%20%C2%B7%20ODT-blue)
 ![Deploy](https://img.shields.io/badge/deploy-standalone%20jar%20%7C%20Tomcat%20war-555)
