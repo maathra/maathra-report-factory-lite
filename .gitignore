@@ -1,0 +1,5 @@
+# Binaries are published as GitHub Release assets, never committed here.
+*.jar
+*.war
+*.zip
+.DS_Store
