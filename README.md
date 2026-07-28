@@ -2,17 +2,27 @@
 
 [![Latest release](https://img.shields.io/github/v/release/maathratnc/maathra-report-factory-lite?label=release&color=0aa)](https://github.com/maathratnc/maathra-report-factory-lite/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/maathratnc/maathra-report-factory-lite/total?color=0aa)](https://github.com/maathratnc/maathra-report-factory-lite/releases)
+![Oracle APEX](https://img.shields.io/badge/Oracle%20APEX-ready-red)
 ![Java 8+](https://img.shields.io/badge/Java-8%2B-orange)
 ![Formats](https://img.shields.io/badge/output-PDF%20%C2%B7%20DOCX%20%C2%B7%20XLSX%20%C2%B7%20PPTX%20%C2%B7%20HTML%20%C2%B7%20RTF%20%C2%B7%20ODT-blue)
 ![Deploy](https://img.shields.io/badge/deploy-standalone%20jar%20%7C%20Tomcat%20war-555)
 
-Turn a JSON payload into a pixel-perfect document — **PDF, Word, Excel, PowerPoint, HTML and
-more** — from a self-hosted service. No database connection and no internet access required.
+**Self-hosted document generation for Oracle APEX** — turn your APEX data into pixel-perfect
+**PDF, Word, Excel, PowerPoint, HTML and more**, with no database connection and no internet access
+required. (It works with any application that can make an HTTP call, but it's built with APEX in
+mind.)
 
-- **Self-hosted:** a single executable JAR with an embedded web server (just a Java 8+ runtime
-  is needed), or a WAR for your own Apache Tomcat 9.
-- **Simple API:** design a template once, then POST your data as JSON to one HTTP endpoint and
-  get the rendered document back in the format you ask for.
+ReportFactory Lite ships with a ready-made **Oracle APEX companion app** and a PL/SQL API, so you
+can generate and download documents straight from your APEX pages in minutes — pass page items as
+report parameters, stream the result to the browser, and even password-protect PDFs.
+
+- **Made for APEX:** a drop-in companion app + `arf_lite_util` PL/SQL API — call it from a process
+  or a button and get the file back. See [`apex-companion-app/`](apex-companion-app/).
+- **Self-hosted & private:** a single executable JAR with an embedded web server (just a Java 8+
+  runtime), or a WAR for your own Apache Tomcat 9. No cloud, nothing leaves your network — ideal for
+  on-prem and air-gapped environments.
+- **Simple API:** design a template once, POST your data as JSON to one HTTP endpoint, and get the
+  rendered document back in the format you ask for.
 - **Batteries included:** sample templates, sample payloads, a built-in File Console for managing
   templates/assets, and optional PDF password protection.
 
@@ -33,17 +43,30 @@ repository provides the runnable distribution, documentation and samples.
 
 ---
 
+## Oracle APEX integration
+
+The fastest way to produce documents from your APEX apps:
+
+- [**`apex-companion-app/`**](apex-companion-app/) — an installable Oracle APEX application
+  ([`arflite-apex-app.sql`](apex-companion-app/arflite-apex-app.sql)) plus setup notes in its
+  [README](apex-companion-app/README.md).
+
+From APEX you register a report, pass parameters from page items, call the service, and download the
+result — **PDF, Word, Excel or PowerPoint** — with optional **PDF password protection**. Point the
+companion app at your ReportFactory Lite instance and you're generating documents from a button or
+page process.
+
+---
+
 ## Download
 
 Get the ready-to-run bundle from the [**Releases**](../../releases/latest) page:
 
 | File | Use |
 |---|---|
-| `report-factory-lite-<version>.zip` | Full standalone bundle — unzip and run (recommended) |
-| `report-factory-lite-<version>.jar` | Just the standalone application |
-| `report-factory-lite-<version>.war` | For deploying into external Apache Tomcat 9.x |
+| `report-factory-lite-<version>.zip` | **The complete bundle** — unzip and run. Contains both the standalone JAR and the Tomcat WAR, plus config, sample templates, sample data and docs. |
 
-Verify your download against [`SHA256SUMS.txt`](SHA256SUMS.txt):
+Verify your download against the bundled checksums:
 
 ```bash
 shasum -a 256 -c SHA256SUMS.txt
@@ -69,17 +92,19 @@ curl -X POST http://localhost:8080/export \
   -o invoice.pdf
 ```
 
-See [QUICKSTART.txt](QUICKSTART.txt) for the essentials and [USER-GUIDE.md](USER-GUIDE.md) for the
-full manual (configuration, all output formats, the File Console, Tomcat deployment and licensing).
+See [`report-engine/QUICKSTART.txt`](report-engine/QUICKSTART.txt) for the essentials and
+[`report-engine/USER-GUIDE.md`](report-engine/USER-GUIDE.md) for the full manual (configuration, all
+output formats, the File Console, HTTPS/TLS, Tomcat deployment and licensing).
 
 ## What's in this repository
 
-- [`config/application.properties`](config/application.properties) — the configuration template
-- [`templates/`](templates/) — sample compiled report templates (`.jasper`) + images
-- [`sample-data/`](sample-data/) — example JSON payloads for the sample templates
-- `run.sh` / `run.bat` — launch scripts
-- [`USER-GUIDE.md`](USER-GUIDE.md), [`QUICKSTART.txt`](QUICKSTART.txt) — documentation
-- [`THIRD-PARTY-NOTICES.md`](THIRD-PARTY-NOTICES.md) — open-source attributions
+- [`apex-companion-app/`](apex-companion-app/) — Oracle APEX companion app + install script
+- [`report-engine/config/application.properties`](report-engine/config/application.properties) — the configuration template
+- [`report-engine/templates/`](report-engine/templates/) — sample compiled report templates (`.jasper`) + images
+- [`report-engine/sample-data/`](report-engine/sample-data/) — example JSON payloads for the sample templates
+- [`report-engine/run.sh`](report-engine/run.sh) / [`report-engine/run.bat`](report-engine/run.bat) — launch scripts
+- [`report-engine/USER-GUIDE.md`](report-engine/USER-GUIDE.md), [`report-engine/QUICKSTART.txt`](report-engine/QUICKSTART.txt) — documentation
+- [`report-engine/THIRD-PARTY-NOTICES.md`](report-engine/THIRD-PARTY-NOTICES.md) — open-source attributions
 
 The application binaries themselves are attached to each [Release](../../releases), not stored in
 git.
